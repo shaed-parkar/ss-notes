@@ -6,7 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --code-coverage",
+    "test-once": "ng test --watch=false --code-coverage",
+    "prettify": "run-script-os",
+    "prettify:nix": "npx prettier -c 'src/app/**/*.*'",
+    "prettify:default": "npx prettier -c \"src\\app\\**\\*.*\"",
+    "prettify-fix": "run-script-os",
+    "prettify-fix:nix": "npx prettier --write 'src/app/**/*.*'",
+    "prettify-fix:default": "npx prettier --write \"src\\app\\**\\*.*\""
   },
   "private": true,
   "dependencies": {
@@ -34,6 +41,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "run-script-os": "^1.1.6",
     "typescript": "~4.4.3"
   }
 }
